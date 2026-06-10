@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="main_layout(body_content)">
+<head>
+    <meta charset="UTF-8">
+    <title>Night Fury Detailing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #121212; color: #ffffff; }
+        .card { background-color: #1e1e1e; border: 1px solid #333; color: #fff; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary mb-4">
+    <div class="container">
+        <a class="navbar-brand text-danger fw-bold" href="/">NIGHT FURY</a>
+        <div class="navbar-nav">
+            <a class="nav-link active" href="/">Главная</a>
+            <a class="nav-link" href="/services">Услуги</a>
+            <a class="nav-link" href="/add-service">Добавить услугу</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <div th:replace="${body_content}"></div>
+</main>
+
+<footer class="container text-center text-muted mt-5 py-3 border-top border-secondary">
+    <p>© 2026 Night Fury Detailing. Все права защищены.</p>
+</footer>
+
+</body>
+</html>

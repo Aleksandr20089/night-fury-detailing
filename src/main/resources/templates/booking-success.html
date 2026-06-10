@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: main_layout(~{::#success-content})}">
+<head>
+    <title>Заявка принята - Night Fury</title>
+</head>
+<body>
+
+<div id="success-content" class="container my-5 text-center text-white py-5">
+    <div class="p-5 bg-dark rounded-3 border border-success shadow-lg style-box d-inline-block" style="max-width: 500px;">
+        <div class="text-success mb-3" style="font-size: 4rem;">✓</div>
+        <h2 class="fw-bold text-success mb-3">ЗАЯВКА ПРИНЯТА!</h2>
+        <p class="text-secondary mb-4">Спасибо за доверие. Мастера Night Fury Detailing свяжутся с вами в течение 15 минут для уточнения деталей.</p>
+        <a href="/" class="btn btn-outline-light">На главную</a>
+    </div>
+</div>
+
+</body>
+</html>

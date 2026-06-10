@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: main_layout(~{::#booking-content})}">
+<head>
+    <title>Запись на детейлинг - Night Fury</title>
+</head>
+<body>
+
+<div id="booking-content" class="container my-5" style="max-width: 600px;">
+    <div class="card bg-dark text-white border-secondary shadow-lg p-4">
+        <h2 class="text-center text-danger mb-4 fw-bold">ЗАПИСЬ НА СЕРВИС</h2>
+        <p class="text-center text-secondary small mb-4">Оставьте заявку, и наш менеджер свяжется с вами для подтверждения времени.</p>
+
+        <form th:action="@{/book}" th:object="${booking}" method="post">
+            <div class="mb-3">
+                <label for="clientName" class="form-label text-light">Ваше имя</label>
+                <input type="text" th:field="*{clientName}" class="form-control bg-secondary text-white border-dark" id="clientName" placeholder="Александр" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="clientPhone" class="form-label text-light">Номер телефона</label>
+                <input type="tel" th:field="*{clientPhone}" class="form-control bg-secondary text-white border-dark" id="clientPhone" placeholder="+7 (999) 123-45-67" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="carModel" class="form-label text-light">Марка и модель авто</label>
+                <input type="text" th:field="*{carModel}" class="form-control bg-secondary text-white border-dark" id="carModel" placeholder="Porsche 911 / BMW M5" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="service" class="form-label text-light">Выберите услугу</label>
+                <select th:field="*{service}" class="form-select bg-secondary text-white border-dark" id="service" required>
+                    <option value="" disabled selected>-- Выберите из списка --</option>
+                    <option th:each="srv : ${services}" th:value="${srv.id}" th:text="${srv.name + ' — ' + srv.price + ' руб.'}"></option>
+                </select>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-danger btn-lg fw-bold">ОТПРАВИТЬ ЗАЯВКУ</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: main_layout(~{::#main-page})}">
+<head>
+    <title>Главная - Night Fury Detailing</title>
+</head>
+<body>
+
+<div id="main-page">
+    <!-- Блок-приветствие с сочным фоном -->
+    <div class="p-5 mb-5 rounded-3 bg-dark text-white border border-secondary shadow position-relative overflow-hidden">
+        <div class="row align-items-center position-relative" style="z-index: 2;">
+            <div class="col-lg-7">
+                <h1 class="display-4 fw-bold text-danger mb-3">NIGHT FURY DETAILING</h1>
+                <p class="fs-5 text-secondary">
+                    Мы не просто моем машины — мы возвращаем им первозданный блеск, защищаем от суровых дорожных реалий и доводим каждую деталь до совершенства. Наша студия — это место, где страсть к автомобилям встречается с немецким перфекционизмом и премиальной автохимией.
+                </p>
+                <hr class="my-4 border-secondary">
+                <p class="text-light fw-light">Используем топовые составы, профессиональный свет и гарантируем индивидуальный подход к каждому суперкару, внедорожнику или городскому авто.</p>
+                <a href="/services" class="btn btn-danger btn-lg px-4 me-md-2">Посмотреть услуги</a>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block">
+                <!-- Стильное фото спорткара в тему названия -->
+                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=500&q=80"
+                     alt="Night Car" class="img-fluid rounded shadow border border-secondary img-thumbnail bg-dark">
+            </div>
+        </div>
+    </div>
+
+    <!-- Секция: Почему мы -->
+    <h3 class="text-center text-white mb-4 fw-bold">НАШИ БУДНИ И РЕЗУЛЬТАТЫ</h3>
+
+    <!-- Галерея атмосферных фото (Тематика детейлинга) -->
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+        <div class="col">
+            <div class="card h-100 bg-dark border-secondary shadow-sm">
+                <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=500&q=80"
+                     class="card-img-top" alt="Полировка кузова" style="height: 220px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Зеркальный блеск</h5>
+                    <p class="card-text text-secondary">Профессиональная восстановительная и мягкая полировка. Убираем до 99% царапин, голограмм и помутнений лака.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 bg-dark border-secondary shadow-sm">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80"
+                     class="card-img-top" alt="Керамика" style="height: 220px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Керамическая защита</h5>
+                    <p class="card-text text-secondary">Нанесение премиальных кварцевых и керамических составов. Глубокий цвет, мощный гидрофоб и защита от реагентов.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 bg-dark border-secondary shadow-sm">
+                <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=500&q=80"
+                     class="card-img-top" alt="Химчистка" style="height: 220px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Детейлинг-салон</h5>
+                    <p class="card-text text-secondary">Полная разборка салона, деликатная химчистка кожи и алькантары торнадорами и паром. Консервация пластика.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
