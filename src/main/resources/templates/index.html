@@ -17,7 +17,7 @@
                 </p>
                 <hr class="my-4 border-secondary">
                 <p class="text-light fw-light">Используем топовые составы, профессиональный свет и гарантируем индивидуальный подход к каждому суперкару, внедорожнику или городскому авто.</p>
-                <a href="/services" class="btn btn-danger btn-lg px-4 me-md-2">Посмотреть услуги</a>
+                <a href="#booking-section" class="btn btn-danger btn-lg px-4 me-md-2">Записаться на детейлинг</a>
             </div>
             <div class="col-lg-5 d-none d-lg-block">
                 <!-- Стильное фото спорткара в тему названия -->
@@ -62,6 +62,49 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- НОВАЯ СЕКЦИЯ: Форма онлайн-записи -->
+    <div id="booking-section" class="p-4 p-md-5 rounded-3 bg-dark text-white border border-secondary shadow mb-5">
+        <h3 class="text-center text-danger fw-bold mb-4">ОНЛАЙН ЗАПИСЬ НА СЕРВИС</h3>
+
+        <form th:action="@{/book}" method="POST" class="row g-3">
+            <div class="col-md-6">
+                <label for="clientName" class="form-label text-light">Ваше имя</label>
+                <input type="text" class="form-control bg-secondary text-white border-secondary"
+                       id="clientName" name="clientName" placeholder="Александр" required>
+            </div>
+            <div class="col-md-6">
+                <label for="clientPhone" class="form-label text-light">Номер телефона</label>
+                <input type="tel" class="form-control bg-secondary text-white border-secondary"
+                       id="clientPhone" name="clientPhone" placeholder="+7 (999) 111-22-33" required>
+            </div>
+            <div class="col-md-6">
+                <label for="carModel" class="form-label text-light">Марка и модель авто</label>
+                <input type="text" class="form-control bg-secondary text-white border-secondary"
+                       id="carModel" name="carModel" placeholder="BMW M5 F90" required>
+            </div>
+            <div class="col-md-6">
+                <label for="serviceId" class="form-label text-light">Выберите услугу</label>
+                <select class="form-select bg-secondary text-white border-secondary" id="serviceId" name="serviceId" required>
+                    <option value="" disabled selected>-- Выберите из списка --</option>
+                    <!-- Сюда Spring Boot автоматически подставит услуги из базы данных -->
+                    <option th:each="service : ${services}"
+                            th:value="${service.id}"
+                            th:text="${service.name + ' (' + service.price + ' ₽)'}">
+                    </option>
+                </select>
+            </div>
+            <div class="col-md-12">
+                <label for="bookingTime" class="form-label text-light">Желаемая дата и время</label>
+                <input type="datetime-local" class="form-control bg-secondary text-white border-secondary"
+                       id="bookingTime" name="bookingTime" required>
+            </div>
+
+            <div class="col-12 text-center mt-4">
+                <button type="submit" class="btn btn-danger btn-lg px-5">Отправить заявку</button>
+            </div>
+        </form>
     </div>
 
 </div>
