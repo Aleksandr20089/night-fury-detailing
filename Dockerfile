@@ -9,6 +9,7 @@ RUN ./mvnw clean package -DskipTests
 # Шаг 2: Запускаем готовый jar-файл на чистой Java 21
 FROM eclipse-temurin:21-jre
 WORKDIR /app
-COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar app.jar
+# ИСПРАВЛЕНО: Заменили demo на detailing
+COPY --from=build /app/target/detailing-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
