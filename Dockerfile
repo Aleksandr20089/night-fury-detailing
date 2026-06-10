@@ -2,6 +2,8 @@
 FROM maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /app
 COPY . .
+# Даем права на выполнение скрипта сборщика в Linux
+RUN chmod +x ./mvnw
 RUN ./mvnw clean package -DskipTests
 
 # Шаг 2: Запускаем готовый jar-файл на чистой Java 21
